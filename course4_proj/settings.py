@@ -38,6 +38,7 @@ class Dev(Configuration):
     SESSION_COOKIE_SAMESITE = "None"
     CELERY_RESULT_BACKEND = "django-db"
     CELERY_BROKER_URL = "redis://localhost:6379/0"
+    ADMINS = [("Ben", "ben@example.com")]
 
     # Application definition
 
@@ -156,3 +157,5 @@ class Dev(Configuration):
             "level": "DEBUG",
         },
     }
+
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
